@@ -7,11 +7,11 @@ NC='\033[0m'
 setup_virtualenv() {
   info 'Setting up virtualenv...'
   pip install virtualenv
-  mkdir -p '.env'
-  cd '.env/'
+  mkdir -p 'env'
+  cd 'env/'
   virtualenv server
   cd ..
-  source ".env/server/bin/activate"
+  source "env/server/bin/activate"
   pip install -r 'masters_app/requirement.txt'
   finish 'Virtualenv setup finish.'
 }
@@ -32,3 +32,4 @@ finish() {
 
 update_system
 setup_virtualenv
+source env/bin/activate
